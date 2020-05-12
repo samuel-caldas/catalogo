@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Catalogo</title>
+<style>
+.0shadown{
+	background: -moz-linear-gradient(left, rgba(107,107,107,0) 0%, rgba(107,107,107,0) 10%, rgba(104,104,104,0.3) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(107,107,107,0)), color-stop(10%,rgba(107,107,107,0)), color-stop(100%,rgba(104,104,104,0.3))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(107,107,107,0) 0%,rgba(107,107,107,0) 10%,rgba(104,104,104,0.3) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(107,107,107,0) 0%,rgba(107,107,107,0) 10%,rgba(104,104,104,0.3) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(107,107,107,0) 0%,rgba(107,107,107,0) 10%,rgba(104,104,104,0.3) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(107,107,107,0) 0%,rgba(107,107,107,0) 10%,rgba(104,104,104,0.3) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006b6b6b', endColorstr='#33686868',GradientType=1 ); /* IE6-9 */
+}
+.0pag{
+	-moz-box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+	background-color: #000;
+}
+.0opag{
+	-moz-box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 0px 50px rgba(0,0,0,0.5);
+}
+body {
+	background-image: url(img/bkg.jpg);
+	background-repeat: no-repeat;
+	margin: 0px;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	min-height: 1000px;
+	min-width: 1200px;
+	font-family: "Segoe UI";
+	overflow: hidden;
+}
+td button{
+	display: block;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	position: relative;
+	top: -350px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	height: 50px;
+	width: 50px;
+	padding: 0px;
+	margin-top: -25px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	cursor: pointer;
+}
+</style>
+<script type="text/javascript" src="script/soundmanager.js"></script>
+<script type="text/javascript" src="bookflip.js"></script>
+</head>
+
+<body>
+<div>
+ <!-- soundManager appends "hidden" Flash to the first DIV on the page. -->
+</div>
+<table border="0" align="center" cellpadding="0" cellspacing="0" style=" padding:10px;">
+  <tr>
+    <td align="center" valign="middle" width="250" height="143" background="img/logo.png"></td>
+  </tr>
+</table>
+<div id="myBook">
+ <div style="background:url(img/0-Capa.jpg)"></div>
+ <div style="background:url(img/1.jpg)"></div>
+ <div style="background:url(img/2.jpg)"></div>
+ <div style="background:url(img/3.jpg)"></div>
+ <div style="background:url(img/4.jpg)"></div>
+ <div style="background:url(img/5.jpg)"></div>
+ <div style="background:url(img/6.jpg)"></div>
+ <div style="background:url(img/7.jpg)"></div>
+ <div style="background:url(img/8.jpg)"></div>
+ <div style="background:url(img/9.jpg)"></div>
+ <div style="background:url(img/10.jpg)"></div>
+ <div style="background:url(img/11.jpg)"></div>
+ <div style="background:url(img/12.jpg)"></div>
+ <div style="background:url(img/fundo.jpg)"></div>
+</div>
+<table width="1150" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="top"><button onclick="goprev();" style="background:url(img/esquerda.png)"></button></td>
+    <td align="right" valign="top"><button onclick="gonext();" style="background:url(img/direita.png)"></button></td>
+  </tr>
+</table>
+<script type="text/javascript">
+var myPageW=500; //page width
+var myPageH=707; //page height
+var pageBorderWidth=0; //adjust border width
+var pageBorderColor=""; //border color
+var pageBorderStyle=""; //border style eg. solid, dashed or dotted.
+
+var pSpeed=10; //page speed, 20 is best for Opera browser. Less is faster
+var pSound=false //change to true for flip sound effect, if true, install SoundManager from schillmania.com
+
+var showBinder=false; //change to false for no binder
+var binderImage = "parchmentring2.gif"; //location of center binder
+var binderWidth = 20; //width of center binder image
+var numPixelsToMove = 20;//number of pixels to move per frame, more is faster but less smooth
+
+//You must create the place holder for the dropdown on this page with an id attribute, eg. <select id="flipSelect" style="display:none;"></select>
+var selectNavigation=true; //this builds a drop down list of pages for auto navigation.
+allowPageClick=true; //allow clicking page directly
+doIncrementalAutoFlip = false; //set this to true if you want to flip to selected page incrementally(ie.see each page turn)
+soundManagerInit();
+ini();
+
+</script>
+</body>
+</html>
